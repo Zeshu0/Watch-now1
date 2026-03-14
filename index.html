@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ultimate Viral Members Area</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#000;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.container{
+max-width:420px;
+margin:auto;
+padding:20px;
+position:relative;
+}
+
+img{
+width:100%;
+border-radius:12px;
+filter: blur(3px);
+transition: filter 0.8s, transform 0.8s;
+}
+
+img:hover{
+filter: blur(0);
+transform: scale(1.03);
+}
+
+h1{
+color:#ff33aa;
+text-shadow: 0 0 8px #ff33aa,0 0 20px #ff66cc;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+0% { text-shadow:0 0 8px #ff33aa,0 0 20px #ff66cc; }
+100% { text-shadow:0 0 20px #ff66ff,0 0 40px #ff99ff; }
+}
+
+.btn{
+display:block;
+background:#ff33aa;
+color:white;
+padding:14px;
+margin:12px 0;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+transition: all 0.3s;
+position:relative;
+z-index:2;
+}
+
+.btn:hover{
+background:#ff66cc;
+transform: scale(1.12);
+box-shadow:0 0 25px #ff66cc;
+}
+
+.timer{
+color:#ffd700;
+font-size:22px;
+margin:10px 0;
+}
+
+.users{
+color:#00ff99;
+margin-bottom:10px;
+}
+
+.chat{
+background:#111;
+padding:10px;
+border-radius:8px;
+margin-top:10px;
+font-size:14px;
+}
+
+.footer{
+margin-top:20px;
+color:#777;
+font-size:13px;
+}
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.popup-box{
+background:#111;
+padding:25px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 0 25px #ff33aa;
+}
+
+.notification{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ff33aa;
+color:white;
+padding:12px 18px;
+border-radius:8px;
+box-shadow:0 0 15px #ff33aa;
+font-size:14px;
+display:none;
+z-index:1000;
+animation: popin 0.5s ease forwards;
+}
+
+@keyframes popin{
+0%{opacity:0;transform:translateY(20px);}
+100%{opacity:1;transform:translateY(0);}
+}
+
+/* Auto scroll effect */
+@keyframes scrollPage{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+.container{
+animation: scrollPage 6s infinite alternate;
+}
+</style>
+
+<script>
+// Rotating links
+var links=[
+"https://chinesecongressawake.com/gvqggkv8xt?key=b245280f45aaee91a4b89f0838dc7d05",
+"https://chinesecongressawake.com/jqra5jm411?key=1b17f0dfb4d1034deb7cab6d8a104b41",
+"https://chinesecongressawake.com/gvqggkv8xt?key=b245280f45aaee91a4b89f0838dc7d05",
+"https://chinesecongressawake.com/jqra5jm411?key=1b17f0dfb4d1034deb7cab6d8a104b41",
+"https://chinesecongressawake.com/gvqggkv8xt?key=b245280f45aaee91a4b89f0838dc7d05"
+];
+var current=0;
+var timeLeft=3;
+
+// Dynamic countdown with animation
+function countdown(){
+var t = document.getElementById("timer");
+t.style.transform="scale(1.2)";
+setTimeout(()=>{t.style.transform="scale(1)";},300);
+
+if(timeLeft<=0){
+window.location.href=links[current];
+current=(current+1)%links.length;
+timeLeft=3;
+}else{
+t.innerHTML=timeLeft+" seconds remaining";
+}
+timeLeft--;
+}
+setInterval(countdown,1000);
+
+// 18+ popup
+function enter(){document.getElementById("popup").style.display="none";}
+
+// Fake chat
+function fakeChat(){
+var msgs=[
+"Ali joined the room",
+"Zara is watching now",
+"Ahmed just entered",
+"Someone unlocked content",
+"3 new members joined",
+"Exclusive content available now!"
+];
+var msg=msgs[Math.floor(Math.random()*msgs.length)];
+document.getElementById("chat").innerHTML=msg;
+}
+setInterval(fakeChat,2500);
+
+// Fake users
+function usersOnline(){
+var n=Math.floor(Math.random()*80)+100;
+document.getElementById("users").innerHTML=n+" users online now";
+}
+setInterval(usersOnline,3000);
+
+// Notification popups
+var notifications=["New content unlocked!","Someone just joined!","Exclusive access granted!","Limited access content!"];
+function showNotification(){
+var n=document.createElement("div");
+n.className="notification";
+n.innerText=notifications[Math.floor(Math.random()*notifications.length)];
+document.body.appendChild(n);
+n.style.display="block";
+setTimeout(function(){n.remove();},4500);
+}
+setInterval(showNotification,6000);
+
+</script>
+
+</head>
+<body>
+
+<div id="popup" class="popup">
+<div class="popup-box">
+<h2>18+ Age Verification</h2>
+<p>You must be 18+ to enter</p>
+<button class="btn" onclick="enter()">I am 18+</button>
+</div>
+</div>
+
+<div class="container">
+
+<img src="https://i.imgur.com/8Km9tLL.jpg">
+
+<h1>Extreme Viral Members Area</h1>
+
+<div class="users" id="users">134 users online now</div>
+<div class="timer" id="timer">3 seconds remaining</div>
+
+<a class="btn" href="https://chinesecongressawake.com/gvqggkv8xt?key=b245280f45aaee91a4b89f0838dc7d05">Link 1</a>
+<a class="btn" href="https://chinesecongressawake.com/jqra5jm411?key=1b17f0dfb4d1034deb7cab6d8a104b41">Link 2</a>
+<a class="btn" href="https://chinesecongressawake.com/gvqggkv8xt?key=b245280f45aaee91a4b89f0838dc7d05">Link 3</a>
+<a class="btn" href="https://chinesecongressawake.com/jqra5jm411?key=1b17f0dfb4d1034deb7cab6d8a104b41">Link 4</a>
+<a class="btn" href="https://chinesecongressawake.com/gvqggkv8xt?key=b245280f45aaee91a4b89f0838dc7d05">Link 5</a>
+
+<div class="chat" id="chat">124 users online</div>
+
+<div class="footer">© 2026 Extreme Access</div>
+
+</div>
+
+</body>
+</html>
